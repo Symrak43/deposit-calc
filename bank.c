@@ -39,8 +39,14 @@ int main(){
     int sum, data;
     printf("Сумма вклада: ");
     scanf("%d", &sum);
+
     printf("Срок вклада: ");
     scanf("%d", &data);
-    printf("Вы получите: %d\n", vklad(sum, data));
+
+    if ((sum > 9999) && (data < 366) && (data >= 0))
+        printf("Вы получите: %d\n", vklad(sum, data));
+    else
+        printf("Ошибка!\n");
+
     return 0;
 };
