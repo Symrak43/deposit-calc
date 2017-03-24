@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#include <math.h> 
 
 int vklad(int sum, int date){
     int e;

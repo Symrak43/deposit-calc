@@ -1,3 +1,5 @@
 # ignore following files
 main
 bank
+*.c
+!bank.c
