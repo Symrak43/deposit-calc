@@ -1,5 +1,5 @@
 # ignore following files
-main
-bank
-*.c
-!bank.c
+*.o
+.~
+!Makefile
+
