@@ -37,9 +37,6 @@ $(DIR)/deposit.o: $(DAR)/deposit.c
 
 test: $(BT)/$(EXECUTABLE_TEST)
 
-$(BT)/$(EXECUTABLE_TEST): $(BUT)/main.o $(BUT)/deposit_test.o $(BUT)/validation_test.o $(DIR)/deposit.o
-	@if [ ! -d $(BT) ] ; then echo "creating $(BT)"; mkdir bin/deposit-calc-test; fi
-	$(CC) $(BUT)/main.o $(BUT)/deposit_test.o $(BUT)/validation_test.o $(DIR)/deposit.o -o $(BT)/$(EXECUTABLE_TEST)
 
 $(BUT)/main.o: $(DT)/main.c
 	@if [ ! -d $(BUT) ] ; then echo "creating $(BUT)"; mkdir build/test; fi
@@ -52,6 +49,11 @@ $(BUT)/deposit_test.o: $(DT)/deposit_test.c
 $(BUT)/validation_test.o: $(DT)/validation_test.c
 	@if [ ! -d $(BUT) ] ; then echo "creating $(BUT)"; mkdir build/test; fi
 	$(CC) $(CFLAGS) -c $(DT)/validation_test.c -o $(BUT)/validation_test.o 
+	
+$(BT)/$(EXECUTABLE_TEST): $(BUT)/main.o $(BUT)/deposit_test.o $(BUT)/validation_test.o $(DIR)/deposit.o
+	@if [ ! -d $(BT) ] ; then echo "creating $(BT)"; mkdir bin/deposit-calc-test; fi
+	$(CC) $(BUT)/main.o $(BUT)/deposit_test.o $(BUT)/validation_test.o $(DIR)/deposit.o -o $(BT)/$(EXECUTABLE_TEST)
+
 
 .PHONY : clean test
 clean:
