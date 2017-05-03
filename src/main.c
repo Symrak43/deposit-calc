@@ -10,7 +10,8 @@ int main(){
     printf("Срок вклада: ");
     scanf("%d", &date);
 
-    errore(sum, date);
-
-    return 0;
+    if(errore(sum, date))
+    	printf("Вы получите: %d\n", vklad(sum, date));
+    else
+    	printf("Ошибка!\n");
 };

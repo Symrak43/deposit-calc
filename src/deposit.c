@@ -2,7 +2,7 @@
 #include "deposit.h"
 int vklad(int sum, int date){
     int e;
-    if (sum < 1000000){
+    if (sum < 100000){
         if (date < 31){
             e = sum - sum * 0.1;
         };
@@ -36,8 +36,7 @@ int vklad(int sum, int date){
 int errore(int sum, int date){
 
     if ((sum > 9999) && (date < 366) && (date >= 0))
-        printf("Вы получите: %d\n", vklad(sum, date));
-    else
-        printf("Ошибка!\n");
-    return 0;
+        return 1;
+    else 
+        return 0;
 };
