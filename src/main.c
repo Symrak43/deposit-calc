@@ -14,4 +14,5 @@ int main(){
     	printf("Вы получите: %d\n", vklad(sum, date));
     else
     	printf("Ошибка!\n");
+    return 0;
 }
